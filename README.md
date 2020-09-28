@@ -3,7 +3,7 @@ Coupled NEMO-PISCES-APECOSM configurations
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/apecosm/apecosm-pisces-1d/master/images/logo_apecosm_sanstexte_rvb_300dpi.png?token=AHYKVT3EE3WLFVG4BTLN3RS7OG3CS" height=50 hspace=50>
-  <img src="https://raw.githubusercontent.com/apecosm/apecosm-pisces-1d/master/images/NEMO_logo.png?token=AHYKVTZOMJVELKHSAZGUI7S7OG3AG" height=50>
+  <img src="https://github.com/apecosm/apecosm-pisces-1d/blob/master/images/NEMO_logo.png" height=50>
 </div>
 
 # How to use
