@@ -2,11 +2,11 @@ Coupled NEMO-PISCES-APECOSM configurations
 =================================================
 
 <div align="center">
-  <img src="https://github.com/apecosm/apecosm-pisces-1d/blob/master/images/logo_apecosm_sanstexte_rvb_300dpi.png?token=AHYKVT3EE3WLFVG4BTLN3RS7OG3CS" height=50 hspace=50>
+  <img src="https://github.com/apecosm/apecosm-pisces-1d/blob/master/images/logo_apecosm_sanstexte_rvb_300dpi.png?token=AHYKVT3EE3WLFVG4BTLN3RS7OG3CS" height=70 hspace=50>
   <img src="https://github.com/apecosm/apecosm-pisces-1d/blob/master/images/NEMO_logo.png" height=50>
 </div>
 
-# How to use
+# Compilation
 
 ## APECOSM
 
@@ -22,3 +22,12 @@ Coupled NEMO-PISCES-APECOSM configurations
 - Create a new architecture file to include Apecosm library files following http://documentation.apecosm.org/nemo.html#modification-of-a-nemo-architecture-file
 - Copy the fortran files in the Apecosm `src/nemo/fortran` to the `C1D_PISCES_APECOSM/MY_SRC` directory, following  http://documentation.apecosm.org/nemo.html#creation-of-a-nemo-ap-configuration
 - Recompile the code using `./makenemo -m ARCH-AP -n C1D_PISCES_APECOSM`.
+
+# Running a configuration
+
+- Go to the `C1D_PISCES_APECOSM/EXP00` directory.
+- Copy the content of the `SHARED/apecosm` directory into `C1D_PISCES_APECOSM/EXP00`
+- Copy the content of the `SHARED/namelist` directory into `C1D_PISCES_APECOSM/EXP00`
+- Copy the content of the `CONF/data` directory into `C1D_PISCES_APECOSM/EXP00`, with `CONF` one of the 1D configuration (`BATS`, `DYFAMED`, etc.)
+- Copy the content of the `CONF/namelist` directory into `C1D_PISCES_APECOSM/EXP00`, , with `CONF` one of the 1D configuration (`BATS`, `DYFAMED`, etc.)
+- Go to the `C1D_PISCES_APECOSM/EXP00` and type `./opa`.
