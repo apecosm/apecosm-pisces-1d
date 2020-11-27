@@ -6,6 +6,14 @@ Coupled NEMO-PISCES-APECOSM configurations
   <img src="https://github.com/apecosm/apecosm-pisces-1d/blob/master/images/NEMO_logo.png" height=50>
 </div>
 
+# Stations
+
+- BATS: (64°W, 31.5°N) ): http://bats.bios.edu/
+- HOT: (158°W, 22.45°N ): http://hahana.soest.hawaii.edu/hot/ 
+- FAMED: (7.52°E, 43.27°N): http://www.obs-vlfr.fr/cd_rom_dmtt/sodyf_main.htm
+- KERFIX: (68.25°E, 50.40°S): http://www.obs-vlfr.fr/cd_rom_dmtt/OTHER/KERFIX/bacteries/kfx_bact_delille.htm.htm
+- NABE: (20°W, 47°N): http://www1.whoi.edu/research/nabe.html
+
 # Compilation
 
 ## APECOSM
