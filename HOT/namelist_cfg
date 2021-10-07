@@ -65,8 +65,8 @@
    !___________!_________________________!___________________!___________!_____________!________!___________!__________________!__________!_______________!
    !           !  file name              ! frequency (hours) ! variable  ! time interp.!  clim  ! 'yearly'/ ! weights filename ! rotation ! land/sea mask !
    !           !                         !  (if <0  months)  !   name    !   (logical) !  (T/F) ! 'monthly' !                  ! pairing  !    filename   !
-   sn_tem      = 'InitTS_l75_HOT'    ,         -1.       ,'temp',  .false.     , .true.,  'yearly'  ,    ''            ,    ''    ,    ''
-   sn_sal      = 'InitTS_l75_HOT'    ,         -1.       ,'salt',  .false.     , .true.,  'yearly'  ,    ''            ,    ''    ,    ''
+   sn_tem      = 'InitTS_l75_HOT'    ,         -1.       ,'votemper',  .false.     , .true.,  'yearly'  ,    ''            ,    ''    ,    ''
+   sn_sal      = 'InitTS_l75_HOT'    ,         -1.       ,'vosaline',  .false.     , .true.,  'yearly'  ,    ''            ,    ''    ,    ''
 /
 !-----------------------------------------------------------------------
 &namwad        !   Wetting and Drying (WaD)                             (default: OFF)
