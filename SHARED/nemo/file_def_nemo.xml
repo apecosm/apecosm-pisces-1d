@@ -14,24 +14,19 @@
       </file_group> 
 
 
-      <file_group id="1m" output_freq="1mo" output_level="10" enabled=".TRUE."> <!-- real monthly files -->
+      <file_group id="1d" output_freq="1d" output_level="10" enabled=".TRUE."> <!-- real monthly files -->
        
         <file id="file1" name_suffix="_nemo" description="pisces sms variables" >
           <field field_ref="toce"     name="temp"  />
-          <field field_ref="soce"     name="salt"   />
-          <field field_ref="sst"      name="sst"   />
-          <field field_ref="sss"      name="sss"   />
-          <field field_ref="empmr"    name="empmr" />
-          <field field_ref="mldr10_1" name="mld"   />
           <field field_ref="qsr"      name="qsr"   />
           <field field_ref="O2"       name="O2"    />
-          <field field_ref="PO4"      name="PO4"   />
-          <field field_ref="Si"       name="Si"    />
-          <field field_ref="NCHL"     name="TCHL"  long_name="Total chlorophyl Concentration" > NCHL + DCHL  </field>
-          <field field_ref="POC"      name="TPOC"  long_name="Total organic carbon Concentration" > POC + GOC  </field>
-          <field field_ref="Fer"      name="Fer"  unit="nmolFe" > Fer * 1e3 </field>
           <field field_ref="NO3"      name="NO3"   />
-          <field field_ref="DIC"      name="DIC"   />
+          <field field_ref="PHY2"      name="PHY2"   />
+          <field field_ref="ZOO"      name="ZOO"   />
+          <field field_ref="ZOO2"      name="ZOO2"   />
+          <field field_ref="GOC"      name="GOC"   />
+          <field field_ref="PAR"      name="PAR"   />
+          <field field_ref="daylength_apecosm"      name="daylength_ape"/>
         </file>
       </file_group>
 
