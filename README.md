@@ -24,18 +24,17 @@ Coupled NEMO-PISCES-APECOSM configurations
 
 ## NEMO
 
-- Download the NEMO code as follows :`svn co http://forge.ipsl.jussieu.fr/nemo/svn/NEMO/releases/release-3.6/NEMOGCM`. **Registration on the NEMO forge is needeed**
-- Create a new configration as follows: `./makenemo -m ARCH -r C1D_PAPA -n C1D_PISCES_APECOSM`.
-- Edit the `C1D_PISCES_APECOSM/cpp_C1D_PISCES_APECOSM.fcm file` and add `key_top` and `key_pisces`
-- Create a new architecture file to include Apecosm library files following http://documentation.apecosm.org/nemo.html#modification-of-a-nemo-architecture-file
-- Copy the fortran files in the Apecosm `src/nemo/fortran` to the `C1D_PISCES_APECOSM/MY_SRC` directory, following  http://documentation.apecosm.org/nemo.html#creation-of-a-nemo-ap-configuration
-- Recompile the code using `./makenemo -m ARCH-AP -n C1D_PISCES_APECOSM`.
+- Download the NEMO code as follows :`svn co https://forge.ipsl.jussieu.fr/nemo/svn/NEMO/releases/r4.0/r4.0.6 nemo-4` .
+- Create a new configration as follows: `./makenemo -d "OCE TOP" -m GCC_LINUX_nico -r C1D_PAPA -n C1D_PISCES add_key "key_top key_nosignedzero"`.
+- Create a new architecture file (`arch` directory) to include Apecosm library files.
+- Copy the fortran files from the Apecosm `src/nemo/fortran` folder to the NEMO `cfg/C1D_PISCES/MY_SRC` directory.
+- Recompile the code using `./makenemo -d "OCE TOP" -m GCC_LINUX_nico -r C1D_PAPA -n C1D_PISCES add_key "key_top key_nosignedzero"`
 
 # Running a configuration
 
-- Go to the `C1D_PISCES_APECOSM/EXP00` directory.
-- Copy the content of the `SHARED/apecosm` directory into `C1D_PISCES_APECOSM/EXP00`
-- Copy the content of the `SHARED/namelist` directory into `C1D_PISCES_APECOSM/EXP00`
-- Copy the content of the `CONF/data` directory into `C1D_PISCES_APECOSM/EXP00`, with `CONF` one of the 1D configuration (`BATS`, `DYFAMED`, etc.)
-- Copy the content of the `CONF/namelist` directory into `C1D_PISCES_APECOSM/EXP00`, , with `CONF` one of the 1D configuration (`BATS`, `DYFAMED`, etc.)
-- Go to the `C1D_PISCES_APECOSM/EXP00` and type `./opa`.
+- Go to the NEMO `cfgs/C1D_PISCES/EXP00` directory.
+- Copy the content of the `SHARED/apecosm` directory into `cfgs/C1D_PISCES/EXP00`
+- Copy the content of the `SHARED/nemo` directory into `cfgs/C1D_PISCES/EXP00`
+- Copy the content of the `CONF/data` directory into `cfgs/C1D_PISCES/EXP00`, with `CONF` being one among `BATS`, `DYFAMED`, `HOT`, `KERFIX`, `NABE`
+- Copy the `cfg` namelists of the `CONF` directory into `cfgs/C1D_PISCES/EXP00`, with `CONF` being one among `BATS`, `DYFAMED`, `HOT`, `KERFIX`, `NABE`
+- Go to the `cfgs/C1D_PISCES/EXP00` and type `./nemo`.
