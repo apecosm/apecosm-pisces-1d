@@ -1199,16 +1199,16 @@
    !                       !                 = 2 first vertical derivative of mixing length bounded by 1
    !                       !                 = 3 as =2 with distinct dissipative an mixing length scale
    ln_mxl0     = .true.    !  surface mixing length scale = F(wind stress) (T) or not (F)
-      nn_mxlice    = 2        ! type of scaling under sea-ice
-      !                       !    = 0 no scaling under sea-ice
-      !                       !    = 1 scaling with constant sea-ice thickness
-      !                       !    = 2 scaling with mean sea-ice thickness ( only with SI3 sea-ice model )
-      !                       !    = 3 scaling with maximum sea-ice thickness
-      rn_mxlice   = 10.       ! max constant ice thickness value when scaling under sea-ice ( nn_mxlice=1)
+   nn_mxlice    = 0        ! type of scaling under sea-ice
+   !                       !    = 0 no scaling under sea-ice
+   !                       !    = 1 scaling with constant sea-ice thickness
+   !                       !    = 2 scaling with mean sea-ice thickness ( only with SI3 sea-ice model )
+   !                       !    = 3 scaling with maximum sea-ice thickness
+   rn_mxlice   = 10.       ! max constant ice thickness value when scaling under sea-ice ( nn_mxlice=1)
    rn_mxl0     =   0.04    !  surface  buoyancy lenght scale minimum value
    ln_mxhsw    = .false.   !  surface mixing length scale = F(wave height)
    ln_lc       = .true.    !  Langmuir cell parameterisation (Axell 2002)
-      rn_lc       =   0.15    !  coef. associated to Langmuir cells
+   rn_lc       =   0.15    !  coef. associated to Langmuir cells
    nn_etau     =   1       !  penetration of tke below the mixed layer (ML) due to NIWs
    !                          !        = 0 none ; = 1 add a tke source below the ML
    !                          !        = 2 add a tke source just at the base of the ML
