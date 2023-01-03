@@ -19,6 +19,10 @@
 !-----------------------------------------------------------------------
 &namp4zlim     !   parameters for nutrient limitations for PISCES std  - ln_p4z
 !-----------------------------------------------------------------------
+   concnno3   =  1.e-6    ! Nitrate half saturation of nanophytoplankton
+   concdno3   =  3.E-6    ! Nitrate half saturation for diatoms
+   concnnh4   =  1.E-6    ! NH4 half saturation for phyto
+   concdnh4   =  3.E-6    ! NH4 half saturation for diatoms
 /
 !-----------------------------------------------------------------------
 &namp5zlim     !   parameters for nutrient limitations PISCES QUOTA    - ln_p5z
@@ -41,8 +45,8 @@
 !-----------------------------------------------------------------------
    pislopen   =  2.       ! P-I slope
    pisloped   =  2.       ! P-I slope  for diatoms
-   fecnm      =  40E-6    ! Maximum Fe/C in nanophytoplankton
-   fecdm      =  40E-6    ! Maximum Fe/C in diatoms
+   fecnm      =  60E-6    ! Maximum Fe/C in nanophytoplankton
+   fecdm      =  60E-6    ! Maximum Fe/C in diatoms
 /
 !-----------------------------------------------------------------------
 &namp5zprod    !   parameters for phytoplankton growth for PISCES quota- ln_p5z
@@ -59,7 +63,7 @@
 !-----------------------------------------------------------------------
 &namp4zmes     !   parameters for mesozooplankton for PISCES std       - ln_p4z
 !-----------------------------------------------------------------------
-   grazrat2   =  0.75     ! maximal mesozoo grazing rate
+   grazrat2   =  0.5      ! maximal mesozoo grazing rate
 /
 !-----------------------------------------------------------------------
 &namp5zmes     !   parameters for mesozooplankton
@@ -68,7 +72,7 @@
 !-----------------------------------------------------------------------
 &namp4zzoo     !   parameters for microzooplankton for PISCES std      - ln_p4z
 !-----------------------------------------------------------------------
-   grazrat    =  3.0      ! maximal zoo grazing rate
+   grazrat    =  2.0      ! maximal zoo grazing rate
 /
 !-----------------------------------------------------------------------
 &namp5zzoo     !   parameters for microzooplankton
@@ -77,6 +81,7 @@
 !-----------------------------------------------------------------------
 &nampisfer     !   parameters for iron chemistry
 !-----------------------------------------------------------------------
+   xlam1     =  0.02      ! scavenging rate of Iron by biogenic particles
 /
 !-----------------------------------------------------------------------  
 &nampisrem     !   parameters for remineralization
@@ -91,21 +96,17 @@
 !-----------------------------------------------------------------------
 /
 !-----------------------------------------------------------------------
-&nampissbc     !   parameters for inputs deposition
+&nampisbc      !   parameters for inputs deposition
 !-----------------------------------------------------------------------
-   sn_dust     = 'Dust_BATS'                ,     -1.  , 'dust'        ,  .true.      , .true. , 'yearly'  , ''       , ''    , ''
-   sn_solub    = 'Solubility_Mahowald_BATS' ,    -12.  , 'solubility2' ,  .false.     , .true. , 'yearly'  , ''       , ''    , ''
-   sn_ndepo    = 'Ndep_BATS'                ,    -12.  , 'ndep2'       ,  .true.     , .true. , 'yearly'  , ''       , ''    , ''
-   sn_ironsed  = 'pmarge_etopo_BATS'        ,    -12.  , 'bathy'       ,  .false.     , .true. , 'yearly'  , ''       , ''    , ''
-!
-   cn_dir      = './'      !  root directory for the location of the dynamical files
-   ln_dust     =  .true.   ! boolean for dust input from the atmosphere
-   ln_solub    =  .true.   ! boolean for variable solubility of atm. Iron
-   ln_river    =  .false.  ! boolean for river input of nutrients
-   ln_ndepo    =  .true.   ! boolean for atmospheric deposition of N
+!              !  file name         ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
+!              !                    !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
+   sn_dust     = 'DustNew_BATS'     ,     -1            , 'dust'        ,  .true.      , .true. , 'yearly'  , ''       , ''    , ''
+   sn_ironsed  = 'pmarge_etopo_BATS',    -12.           , 'bathy'       ,  .false.     , .true. , 'yearly'  , ''       , ''    , ''
    ln_ironsed  =  .true.   ! boolean for Fe input from sediments
-   ln_ironice  =  .false.  ! boolean for Fe input from sea ice
-   ln_hydrofe  =  .false.  ! boolean for from hydrothermal vents
+/
+!-----------------------------------------------------------------------
+&nampissed     !   parameters for sediments mobilization
+!-----------------------------------------------------------------------
 /
 !-----------------------------------------------------------------------
 &nampislig     !   Namelist parameters for ligands, nampislig
@@ -118,6 +119,8 @@
 !-----------------------------------------------------------------------
 &nampisdmp     !   Damping 
 !-----------------------------------------------------------------------
+   ln_pisdmp    = .false.     !  Relaxation for some tracers to a mean value
+   nn_pisdmp    = 8760
 /
 !-----------------------------------------------------------------------
 &nampismass    !   Mass conservation
