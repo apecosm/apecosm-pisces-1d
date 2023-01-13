@@ -5,6 +5,8 @@
 &namtrc_run      !   run information
 !-----------------------------------------------------------------------
    ln_top_euler  = .true.
+   ln_rsttr      = .true.
+   cn_trcrst_in  = "restart_trc_BATS"
 /
 !-----------------------------------------------------------------------
 &namtrc          !   tracers definition
